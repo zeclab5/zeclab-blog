@@ -1,0 +1,43 @@
+baseURL: "https://blog.zeclab.kr/"
+languageCode: "ko"
+title: "ZECLAB Blog"
+theme: "PaperMod"
+
+pagination:
+  pagerSize: 10
+
+enableRobotsTXT: true
+buildDrafts: false
+buildFuture: false
+
+params:
+  author: "장재호"
+  description: "AI·기술 블로그"
+  defaultTheme: auto
+  ShowReadingTime: true
+  ShowShareButtons: false
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true
+  ShowToc: true
+
+  homeInfoParams:
+    Title: "ZECLAB"
+    Content: "공연 영상 디자이너의 AI·기술 탐구 기록"
+
+  socialIcons:
+    - name: email
+      url: "mailto:zeclab@naver.com"
+    - name: globe
+      url: "https://zeclab.kr"
+
+menu:
+  main:
+    - identifier: posts
+      name: Posts
+      url: /posts/
+      weight: 10
+    - identifier: tags
+      name: Tags
+      url: /tags/
+      weight: 20
