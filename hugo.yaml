@@ -10,6 +10,11 @@ enableRobotsTXT: true
 buildDrafts: false
 buildFuture: false
 
+outputs:
+  home:
+    - HTML
+    - JSON
+
 params:
   author: "장재호"
   description: "AI·기술 블로그"
@@ -41,8 +46,3 @@ menu:
       name: Tags
       url: /tags/
       weight: 20
-outputs:
-  home:
-    - HTML
-    - RSS
-    - JSON
