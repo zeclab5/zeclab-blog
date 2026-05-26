@@ -18,11 +18,15 @@ async function main() {
   });
 
   const postsDir = path.join(__dirname, "../content/posts");
-  if (!fs.existsSync(postsDir)) fs.mkdirSync(postsDir, { recursive: true });
+  if (!fs.existsSync(postsDir)) {
+    fs.mkdirSync(postsDir, { recursive: true });
+  }
 
   for (const page of response.results) {
-    const title = page.properties.Title?.title[0]?.plain_text || "Untitled";
-    const date = page.properties.Date?.date?.start || new Date().toISOString().split("T")[0];
+    const title = page.properties["이름"]?.title[0]?.plain_text || 
+                  page.properties["Name"]?.title[0]?.plain_text || "Untitled";
+    const date = page.properties.Date?.date?.start || 
+                 new Date().toISOString().split("T")[0];
     const tags = page.properties.Tags?.multi_select?.map((t) => t.name) || [];
     const slug = page.properties.Slug?.rich_text[0]?.plain_text || page.id;
 
